@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera página con GitHub Pages</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi primera página con GitHub Pages</title>
 
-    <!-- SDK de OneSignal -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
-                appId: "4e28e2bf-93dc-418e-9a5e-df9522cf894e",
-                notifyButton: {
-                    enable: true,
-                },
-            });
-        });
-    </script>
+  <!-- SDK de OneSignal -->
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "4e28e2bf-93dc-418e-9a5e-df9522cf894e",
+        notifyButton: {
+          enable: true
+        },
+        promptOptions: {
+          slidedown: {
+            enabled: true,
+            actionMessage: "¿Deseas recibir notificaciones de esta página?",
+            acceptButtonText: "Sí",
+            cancelButtonText: "No"
+          }
+        }
+      });
+
+      // Mostrar automáticamente el prompt de suscripción si aún no está suscrito
+      OneSignal.showSlidedownPrompt();
+    });
+  </script>
 </head>
 <body>
-    <h1>¡Hola desde GitHub Pages! 🎉</h1>
-    <p>Esta es una prueba del repositorio <strong>Pruebassssss</strong>.</p>
+  <h1>¡Hola desde GitHub Pages! 🎉</h1>
+  <p>Esta es una prueba del repositorio <strong>Pruebassssss</strong>.</p>
 </body>
 </html>
